@@ -1,0 +1,9 @@
+// devcontainer.json
+{
+    "name": "Node.js with Redis and MariaDB",
+    "dockerComposeFile": ["../docker-compose-dev.yml"],
+    "service": "api",
+    "workspaceFolder": "/src",
+    "extensions": ["dbaeumer.vscode-eslint"]
+  }
+  
