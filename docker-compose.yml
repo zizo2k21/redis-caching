@@ -14,9 +14,18 @@ services:
     restart: unless-stopped
     network_mode: bridge
     environment:
-      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=saas
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=rootpassword
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_CLIENT=mysql
+    command: [
+      "--character-set-server=utf8mb4",
+      "--collation-server=utf8mb4_unicode_ci",
+    ]
     volumes:
       - ./db_data:/var/lib/mysql
+
 
   api:
     build: .
